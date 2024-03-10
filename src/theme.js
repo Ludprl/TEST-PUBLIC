@@ -4,6 +4,7 @@ const theme = createTheme({
     palette: {
         primary: {
             main: "#556cd6",
+            light: "#3A4160", // Couleur alternative pour les éléments de fond
         },
         secondary: {
             main: "#19857b",
@@ -33,7 +34,6 @@ const theme = createTheme({
         MuiChip: {
             styleOverrides: {
                 colorPrimary: {
-                    backgroundColor: "orange", // Un bleu personnalisé comme exemple
                     color: "#3A4160", // Couleur du texte sur le fond bleu
                     "&:hover": {
                         backgroundColor: "#3A4160", // Une teinte plus foncée au survol

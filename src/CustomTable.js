@@ -34,6 +34,14 @@ const CustomTable = ({ data }) => {
 
     return (
         <>
+            <TableContainer>
+                <Chip
+                    label={filter}
+                    color="primary"
+                    variant="outlined"
+                    onDelete={handleDelete}
+                />
+            </TableContainer>
             <TableContainer component={Paper}>
                 <Table aria-label="simple table">
                     <TableHead>
@@ -73,14 +81,6 @@ const CustomTable = ({ data }) => {
                         ))}
                     </TableBody>
                 </Table>
-            </TableContainer>
-            <TableContainer>
-                <Chip
-                    label={filter}
-                    color="primary"
-                    variant="filled"
-                    onDelete={handleDelete}
-                />
             </TableContainer>
         </>
     );
