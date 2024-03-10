@@ -1,7 +1,55 @@
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#556cd6",
+        },
+        secondary: {
+            main: "#19857b",
+        },
+        error: {
+            main: "#ff1744",
+        },
+        background: {
+            default: "#fff",
+        },
+    },
+    typography: {
+        fontFamily: '"Poppins", "Arial"',
+        fontSize: 16,
+        button: {
+            textTransform: "none",
+        },
+    },
     components: {
+        MuiChipDeleteIconMedium: {
+            styleOverrides: {
+                root: {
+                    color: "red",
+                },
+            },
+        },
+        MuiChip: {
+            styleOverrides: {
+                colorPrimary: {
+                    backgroundColor: "orange", // Un bleu personnalisé comme exemple
+                    color: "#3A4160", // Couleur du texte sur le fond bleu
+                    "&:hover": {
+                        backgroundColor: "#3A4160", // Une teinte plus foncée au survol
+                    },
+                },
+                root: {
+                    color: "orange",
+                },
+                deleteIcon: {
+                    color: "#3A4160", // Couleur personnalisée pour la croix
+                    "&:hover": {
+                        color: "rgba(255, 0, 0, 0.9)", // Couleur au survol
+                    },
+                },
+            },
+        },
         MuiTableContainer: {
             styleOverrides: {
                 root: {
@@ -21,6 +69,7 @@ const theme = createTheme({
                 },
             },
         },
+
         MuiTableCell: {
             styleOverrides: {
                 root: {
@@ -49,6 +98,11 @@ const theme = createTheme({
                     fontWeight: "600", // Rendre le texte des en-têtes gras
                     margin: "0", // Enlever la marge des en-têtes
                     padding: "8px", // Ajuster le padding pour un rendu plus compact
+                },
+                row: {
+                    "&:last-child": {
+                        borderBottom: "none",
+                    },
                 },
             },
         },

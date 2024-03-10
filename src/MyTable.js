@@ -1,9 +1,23 @@
 import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
+import {
+    TextField,
+    Checkbox,
+    Radio,
+    RadioGroup,
+    FormControlLabel,
+    Switch,
+    Slider,
+    FormControl,
+    InputLabel,
+    Select,
+    MenuItem,
+} from "@mui/material";
 
 import CustomTable from "./CustomTable";
 import theme from "./theme"; // Assurez-vous d'importer le chemin correct
 import { Container } from "@mui/material";
+import DataDisplayComponent from "./DataDisplayComponent";
 
 const data = {
     data: [
@@ -55,6 +69,39 @@ function Mytable() {
         <Container className="Jack" sx={{ width: "100%" }}>
             <ThemeProvider theme={theme}>
                 <CustomTable data={data.data} />
+                <div>
+                    <h2>Composants d'entrée</h2>
+                    <TextField label="TextField" variant="outlined" margin="normal" />
+                    <FormControlLabel control={<Checkbox />} label="Checkbox" />
+                    <FormControl component="fieldset">
+                        <RadioGroup row name="radio-buttons-group">
+                            <FormControlLabel
+                                value="option1"
+                                control={<Radio />}
+                                label="Option 1"
+                            />
+                            <FormControlLabel
+                                value="option2"
+                                control={<Radio />}
+                                label="Option 2"
+                            />
+                        </RadioGroup>
+                    </FormControl>
+                    <FormControlLabel control={<Switch />} label="Switch" />
+                    <Slider
+                        defaultValue={30}
+                        aria-label="Default"
+                        valueLabelDisplay="auto"
+                    />
+                    <FormControl variant="outlined" margin="normal">
+                        <InputLabel id="select-label">Select</InputLabel>
+                        <Select labelId="select-label" id="select" label="Select">
+                            <MenuItem value={10}>Option 1</MenuItem>
+                            <MenuItem value={20}>Option 2</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
+                <DataDisplayComponent />
             </ThemeProvider>
         </Container>
     );

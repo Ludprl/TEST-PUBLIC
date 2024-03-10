@@ -8,6 +8,11 @@ import {
     TableRow,
     Paper,
 } from "@mui/material";
+import Chip from "@mui/material/Chip";
+
+const handleDelete = () => {
+    console.log("coucouc");
+};
 
 const CustomTable = ({ data }) => {
     const [filter, setFilter] = useState("Paris");
@@ -70,16 +75,12 @@ const CustomTable = ({ data }) => {
                 </Table>
             </TableContainer>
             <TableContainer>
-                {filter && (
-                    <span
-                        style={{
-                            color: "orange",
-                            fontSize: "0.7rem",
-                        }}
-                    >
-                        Filtre : {filter}
-                    </span>
-                )}
+                <Chip
+                    label={filter}
+                    color="primary"
+                    variant="filled"
+                    onDelete={handleDelete}
+                />
             </TableContainer>
         </>
     );
